@@ -1,0 +1,9 @@
+---
+mysql_repo_family: "el"
+mysql_repo_version: "5.7"
+mysql_repo_location: "http://dev.mysql.com/get/mysql{{ mysql_repo_version | replace('.', '') }}-community-release-{{ mysql_repo_family }}{{ ansible_distribution_version | replace('.', '-') }}.noarch.rpm"
+mysql_repo_local_install: "/etc/yum.repos.d/mysql-community.repo"
+
+# The following variables apply to repositories that get bundled with the MySQL Yum Repository
+mysql_repo_disable_tools: false # mysql-tools-community
+mysql_repo_disable_connectors: false # mysql-connectors-community

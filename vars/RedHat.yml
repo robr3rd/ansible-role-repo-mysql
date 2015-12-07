@@ -1,0 +1,2 @@
+---
+mysql_repo_family: "el" # Assume "Enterprise Linux" (e.g. RHEL, CentOS, etc.)

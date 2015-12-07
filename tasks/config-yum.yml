@@ -1,0 +1,20 @@
+---
+- name: Ensure that the MySQL Yum Repository is configured for the target version of MySQL
+  include: "set-mysql-version-yum.yml"
+  when: mysql_repo_target_version != mysql_repo_version
+
+- name: Ensure that the bundled "mysql-tools-community" repository is disabled
+  ini_file:
+    dest: "{{ mysql_repo_local_install }}"
+    section: "mysql-tools-community"
+    option: enabled
+    value: "0"
+  when: mysql_repo_disable_tools
+
+- name: Ensure that the bundled "mysql-connectors-community" repository is disabled
+  ini_file:
+    dest: "{{ mysql_repo_local_install }}"
+    section: "mysql-connectors-community"
+    option: enabled
+    value: "0"
+  when: mysql_repo_disable_connectors

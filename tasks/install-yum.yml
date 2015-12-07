@@ -1,0 +1,5 @@
+---
+- name: Add MySQL Yum Repository
+  yum:
+    name: "{{ mysql_repo_location }}"
+    state: present

@@ -1,0 +1,14 @@
+---
+- name: Disable default/latest MySQL repository
+  ini_file:
+    dest: "{{ mysql_repo_local_install }}"
+    section: "mysql{{ mysql_repo_version }}-community"
+    option: enabled
+    value: "0"
+
+- name: Enable target MySQL repository
+  ini_file:
+    dest: "{{ mysql_repo_local_install }}"
+    section: "mysql{{ mysql_repo_target_version }}-community"
+    option: enabled
+    value: "1"
