@@ -2,8 +2,8 @@
 dependencies: []
 
 galaxy_info:
-  author: robr3rd
-  description: MySQL Repositories
+  author: Robr3rd
+  description: An Ansible role for using the MySQL Repositories.
   license: "MIT"
   min_ansible_version: 1.4
   platforms:
@@ -13,3 +13,6 @@ galaxy_info:
   categories:
     - packaging
     - database
+    - mysql
+    - sql
+    - server
